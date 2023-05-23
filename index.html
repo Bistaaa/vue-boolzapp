@@ -47,7 +47,15 @@
 
                 <!-- My Chats -->
                 <section id="my-chats">
-                    
+                    <ul>
+                        <li class="chat-container" v-for="contact in contacts">
+                            {{contact.avatar}}
+                            <div class="chat-info">
+                                {{contact.name}}
+                                <p>ultimo messaggio</p>
+                            </div>
+                        </li>
+                    </ul>
                 </section>
             </div>
 
