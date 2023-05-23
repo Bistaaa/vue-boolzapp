@@ -107,6 +107,39 @@ LEFT SIDE
 
 
 
+/* Search Chat */
+
+#search-chat-container{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+#search-chat-icon{
+    color: rgba(187,187,186,255);
+    font-size: 16px;
+    margin: 0 40px;
+}
+
+#search-chat{
+    background-color: rgba(240,240,240,255);
+    border: none;
+    width: 100%;
+    height: 30px;
+    margin-right: 20px;
+    padding: 0 10px
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
