@@ -12,6 +12,7 @@ body{
     background-color: rgba(219,219,219,255);
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 #app{
@@ -134,11 +135,40 @@ LEFT SIDE
 
 
 
+/* My chats */
 
+#my-chats{
+    overflow-y: auto;
+    height: calc(100% - 210px);
+}
 
+.chat-container{
+    background-color: white;
+    height: 80px;
+    list-style-type: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 10px 10px 0 20px;
+    border-top: 1px solid rgba(240,240,240,255);
+}
 
+.chat-container:hover{
+    background-color: rgba(233,235,235,255);
+    cursor: pointer;
+}
 
+.chat-info{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 5px;
+}
 
+.chat-info p{
+    color: rgba(187,187,186,255);
+    font-size: 14px;
+}
 
 
 

@@ -49,7 +49,7 @@
                 <section id="my-chats">
                     <ul>
                         <li class="chat-container" v-for="contact in contacts">
-                            {{contact.avatar}}
+                            <img class="profile-picture" :src="contact.avatar" alt=""> 
                             <div class="chat-info">
                                 {{contact.name}}
                                 <p>ultimo messaggio</p>
