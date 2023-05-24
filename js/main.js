@@ -4,6 +4,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            selectedContact: null,
             contacts: [
                 {
                     name: 'Linda',

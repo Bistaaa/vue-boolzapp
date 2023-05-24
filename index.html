@@ -49,7 +49,7 @@
                 <!-- My Chats -->
                 <section id="my-chats">
                     <ul>
-                        <li class="chat-container" v-for="contact in contacts">
+                        <li class="chat-container" v-for="contact in contacts" :key="contact.name" @click="selectedContact = contact">
                             <img class="profile-picture" :src="contact.avatar" alt=""> 
                             <div class="chat-info">
                                 {{contact.name}}
@@ -86,8 +86,10 @@
                     <p class="message received col-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore praesentium atque ab at quas quod error! Dolore modi facere vel, minima, deserunt, magni repudiandae dolores eos dolorem tempore impedit consequatur.</p> -->
 
 
-                    <div v-for="contact in contacts" :key="contact.name">
-                        <p v-for="message in contact.messages" :key="message.date" :class="['message', 'col-10', message.status, {'col-offset-2': message.status === 'sent'}]">{{ message.message }}</p>
+                    <div v-if="selectedContact">
+                        <div v-for="message in selectedContact.messages" :key="message.date">
+                            <p :class="['message', 'col-10', message.status, {'col-offset-2': message.status === 'sent'}]">{{ message.message }}</p>
+                        </div>
                     </div>
 
 
