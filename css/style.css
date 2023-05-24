@@ -241,13 +241,22 @@ RIGHT SIDE
     height: calc(100% - 150px);
     background-image: url(..//img/chat-background.png);
     overflow-y: auto;
+    padding: 20px 30px;
 }
 
+.sent{
+    background-color: rgba(213,249,186,255);
+}
 
+.received{
+    background-color: white;
+}
 
-
-
-
+.message{
+    padding: 7px 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
 
 
 
