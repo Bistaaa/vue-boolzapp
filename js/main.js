@@ -213,6 +213,7 @@ createApp({
                 message: this.newMessage,
                 status: 'sent'
             });
+            this.newMessage = ``;
         }
     },
     
