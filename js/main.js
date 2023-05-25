@@ -1,6 +1,5 @@
 const { createApp } = Vue;
 
-
 createApp({
     data() {
         return {
@@ -33,6 +32,7 @@ createApp({
                     name: 'Pietro',
                     avatar: './img/avatar_2.png',
                     visible: true,
+                    newMessage: ``,
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
@@ -55,6 +55,7 @@ createApp({
                     name: 'Clara',
                     avatar: './img/avatar_3.png',
                     visible: true,
+                    newMessage: ``,
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
@@ -77,6 +78,7 @@ createApp({
                     name: 'Elisa',
                     avatar: './img/avatar_4.png',
                     visible: true,
+                    newMessage: ``,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -94,6 +96,7 @@ createApp({
                     name: 'Simon',
                     avatar: './img/avatar_5.png',
                     visible: true,
+                    newMessage: ``,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -111,6 +114,7 @@ createApp({
                     name: 'Joseph',
                     avatar: './img/avatar_6.png',
                     visible: true,
+                    newMessage: ``,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -133,6 +137,7 @@ createApp({
                     name: 'Alessia',
                     avatar: './img/avatar_7.png',
                     visible: true,
+                    newMessage: ``,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -150,6 +155,7 @@ createApp({
                     name: 'Giorgia',
                     avatar: './img/avatar_8.png',
                     visible: true,
+                    newMessage: ``,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -172,6 +178,7 @@ createApp({
                     name: 'Leonardo',
                     avatar: './img/avatar_9.png',
                     visible: true,
+                    newMessage: ``,
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
@@ -197,8 +204,15 @@ createApp({
 
     methods: {
         submit() {
-            this.messages.message.push(this.newMessage);
-            this.newMessage= ``;
+
+            const currentDate = new Date();
+            const formattedDate = `${currentDate.getDate()}/${currentDate.getMonth() + 1}/${currentDate.getFullYear()} ${currentDate.getHours()}:${currentDate.getMinutes()}`;
+
+            this.selectedContact.messages.push({
+                date: formattedDate,
+                message: this.newMessage,
+                status: 'sent'
+            });
         }
     },
     
