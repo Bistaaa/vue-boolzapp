@@ -214,6 +214,14 @@ createApp({
                 status: 'sent'
             });
             this.newMessage = ``;
+
+            setTimeout(() => {
+                this.selectedContact.messages.push({
+                    date: formattedDate,
+                    message: 'Ok',
+                    status: 'received'
+                });
+            }, 1000);
         }
     },
     
