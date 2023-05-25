@@ -49,7 +49,7 @@
                 <!-- My Chats -->
                 <section id="my-chats">
                     <ul>
-                        <li class="chat-container" v-for="contact in contacts" :key="contact.name" @click="selectedContact = contact">
+                        <li class="chat-container" v-for="contact in contacts"  @click="selectedContact = contact">
                             <img class="profile-picture" :src="contact.avatar" alt=""> 
                             <div class="chat-info">
                                 {{contact.name}}
@@ -82,25 +82,17 @@
 
                 <!-- Main Screen -->
                 <section id="main-screen">
-                    <!-- <p class="message sent col-10 col-offset-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, ex qui dicta maiores assumenda modi nobis inventore excepturi eligendi saepe sit labore nulla architecto in iste soluta voluptatem! Neque, quis.</p>
-                    <p class="message received col-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore praesentium atque ab at quas quod error! Dolore modi facere vel, minima, deserunt, magni repudiandae dolores eos dolorem tempore impedit consequatur.</p> -->
-
-
-                    <div v-if="selectedContact">
-                        <div v-for="message in selectedContact.messages" :key="message.date">
+                    <div v-if="selectedContact !== null">
+                        <div v-for="message in selectedContact.messages" >
                             <p :class="['message', 'col-10', message.status, {'col-offset-2': message.status === 'sent'}]">{{ message.message }}</p>
                         </div>
                     </div>
-
-
-
-
                 </section>
 
                 <!-- Bottom Bar -->
                 <section id="bottom-bar">
                     <i class="chat-icon fa-regular fa-face-smile"></i>
-                    <input id="type-input" type="text" placeholder="Scrivi un messaggio">
+                    <input id="type-input" type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="submit">
                     <i class="chat-icon fa-solid fa-microphone"></i>
                 </section>
             </div>

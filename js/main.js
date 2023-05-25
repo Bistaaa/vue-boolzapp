@@ -10,6 +10,7 @@ createApp({
                     name: 'Linda',
                     avatar: './img/avatar_1.png',
                     visible: true,
+                    newMessage: ``,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -173,18 +174,18 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Ciao, andiamo a mangiare la pizza stasera?',
+                            date: '28/03/2020 10:10:40',
+                            message: 'La Marianna va in campagna',
                             status: 'received'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
-                            message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                            date: '28/03/2020 10:20:10',
+                            message: 'Sicuro di non aver sbagliato chat?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:51:00',
-                            message: 'OK!!',
+                            date: '28/03/2020 16:15:22',
+                            message: 'Ah scusa!',
                             status: 'received'
                         }
                     ],
@@ -195,7 +196,10 @@ createApp({
     },
 
     methods: {
-        
+        submit() {
+            this.messages.message.push(this.newMessage);
+            this.newMessage= ``;
+        }
     },
     
 }).mount("#app");
